@@ -505,3 +505,101 @@ footer p {
     transition: background var(--transition-fast);
   }
 }
+
+/* -------------------- FORM STYLING (MATCHES #alerts) -------------------- */
+
+#alerts {
+  margin-bottom: 3rem;
+}
+
+#alerts h2 {
+  font-family: var(--font-heading);
+  margin-bottom: 0.2rem;
+}
+
+#alerts p {
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+/* red card background */
+#alerts form {
+  background-color: var(--news-flash);
+  border: 2px solid #c72f3a;
+  padding: 1.5rem;
+  border-radius: 4px;
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.35);
+}
+
+/* form rows (name + mobile) */
+#alerts .form-row {
+  margin-bottom: 1rem;
+}
+
+#alerts label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+#alerts input[type="text"],
+#alerts input[type="tel"] {
+  width: 100%;
+  padding: 0.55rem;
+  border-radius: 3px;
+  border: 1px solid #cccccc;
+  font-size: 0.9rem;
+}
+
+/* fieldset box */
+#alerts fieldset.form-checkboxes {
+  border: 1px solid #ffffff;
+  background: rgba(0,0,0,0.08);
+  border-radius: 3px;
+  padding: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+#alerts fieldset legend {
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+
+/* checkboxes in two columns */
+#alerts fieldset label {
+  display: inline-flex;
+  align-items: center;
+  width: 48%;
+  margin-bottom: 0.55rem;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+#alerts fieldset input[type="checkbox"] {
+  margin-right: 0.4rem;
+}
+
+/* subscribe button */
+#alerts .subscribe-button {
+  width: 100%;
+  background: var(--blue-bulletin);
+  border: 2px solid var(--blue-bulletin);
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0.7rem;
+  border-radius: 3px;
+  font-size: 1rem;
+  letter-spacing: 0.03rem;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.35);
+  transition: var(--transition);
+}
+
+/* hover effect */
+#alerts .subscribe-button:hover {
+  background: transparent;
+  color: var(--blue-bulletin);
+}
