@@ -3,7 +3,7 @@
 /* Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,700;1,300&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&display=swap');
 
-/* ---------- RESET ---------- */
+/* ---------------------- RESET ---------------------- */
 *,
 *::before,
 *::after {
@@ -22,7 +22,8 @@ video {
   display: block;
 }
 
-/* ---------- VARIABLES ---------- */
+/* ---------------------- VARIABLES ---------------------- */
+
 :root {
   --blue-bulletin: #1D3557;
   --news-flash: #E63946;
@@ -41,18 +42,17 @@ video {
   --transition: all 0.35s ease;
 }
 
-/* ---------- BASE / THEME ---------- */
+/* ---------------------- BASE / THEMES ---------------------- */
 
 body {
   font-family: var(--font-body);
   line-height: 1.6;
-  background-color: #353537; /* dark gray like mockup 1 */
+  background-color: #353537;  
   color: var(--watchdog-white);
 }
 
-/* manual light/dark classes used by JS toggle */
 body.light-mode {
-  background-color: #f5f3e9; /* light cream like mockup 2 */
+  background-color: #f5f3e9;
   color: var(--truth-text);
 }
 
@@ -61,14 +61,13 @@ body.dark-mode {
   color: var(--watchdog-white);
 }
 
-/* page wrapper spacing */
 main {
   max-width: 1120px;
   margin: 0 auto;
-  padding: 2.5rem 1.25rem 4rem;
+  padding: 2rem 1.25rem 4rem;
 }
 
-/* ---------- SKIP LINK ---------- */
+/* ---------------------- SKIP LINK ---------------------- */
 
 .skip-link {
   position: absolute;
@@ -86,7 +85,7 @@ main {
   top: 10px;
 }
 
-/* ---------- THEME TOGGLE BUTTON ---------- */
+/* ---------------------- THEME BUTTON ---------------------- */
 
 #theme-toggle {
   position: fixed;
@@ -101,7 +100,7 @@ main {
   z-index: 9998;
 }
 
-/* ---------- HEADER + NAV ---------- */
+/* ---------------------- HEADER + NAV ---------------------- */
 
 header {
   background-color: var(--blue-bulletin);
@@ -112,7 +111,7 @@ header {
 header h1 {
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 2.1rem;
+  font-size: 2rem;
   max-width: 1120px;
   margin: 0 auto;
 }
@@ -123,7 +122,7 @@ header .tagline {
   font-size: 0.95rem;
 }
 
-/* NAV (mobile-first) */
+/* MOBILE NAV */
 .mobile-nav {
   max-width: 1120px;
   margin: 0 auto;
@@ -133,7 +132,7 @@ header .tagline {
   display: inline-block;
   background: var(--news-flash);
   color: #ffffff;
-  padding: 0.5rem 1rem;
+  padding: 0.45rem 1rem;
   border-radius: 0.25rem;
   font-weight: 600;
   cursor: pointer;
@@ -155,14 +154,15 @@ header .tagline {
   text-decoration: none;
   color: #ffffff;
   font-size: 0.9rem;
+  transition: var(--transition);
 }
 
-/* show menu when checkbox checked */
+/* show mobile menu */
 #menu-toggle:checked + .menu-button + .menu {
   display: block;
 }
 
-/* ---------- TYPOGRAPHY ---------- */
+/* ---------------------- TYPOGRAPHY ---------------------- */
 
 h1, h2, h3 {
   font-family: var(--font-heading);
@@ -178,27 +178,14 @@ h3 {
   margin-bottom: 0.35rem;
 }
 
-p, li {
-  font-size: 0.95rem;
-}
-
-/* ---------- INTRO SECTION ---------- */
+/* ---------------------- INTRO ---------------------- */
 
 .intro {
   margin-bottom: 2rem;
 }
 
-.intro h2 {
-  color: var(--watchdog-white);
-}
-
-body.light-mode .intro h2 {
-  color: var(--truth-text);
-}
-
 .intro p {
   max-width: 800px;
-  margin-bottom: 0.75rem;
 }
 
 .intro blockquote {
@@ -207,48 +194,38 @@ body.light-mode .intro h2 {
   margin-top: 0.75rem;
 }
 
-/* ---------- BREAKING NEWS ---------- */
+/* ---------------------- BREAKING NEWS ---------------------- */
 
 #breaking-news {
-  margin-bottom: 2.5rem;
-}
-
-#breaking-news h2 {
-  margin-bottom: 1.25rem;
+  margin-bottom: 3rem;
 }
 
 #breaking-news article {
   background-color: var(--news-flash);
-  color: #ffffff;
   box-shadow: var(--shadow-strong);
   border-radius: 0.35rem;
-  padding: 1rem 1rem 0.75rem;
+  padding: 1rem;
   margin-bottom: 1.5rem;
+  transition: var(--transition);
 }
 
-#breaking-news h3 {
-  font-size: 1.05rem;
-}
-
-#breaking-news p {
-  font-size: 0.9rem;
-  margin-bottom: 0.75rem;
+#breaking-news article:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.45);
 }
 
 #breaking-news video {
-  border-radius: 0.15rem;
-  box-shadow: var(--shadow-soft);
+  border-radius: 0.2rem;
+  margin-top: 0.75rem;
+  transition: var(--transition);
 }
 
-/* ---------- FEATURED ARTICLES GRID ---------- */
-
-#featured-articles {
-  margin-bottom: 3rem;
+#breaking-news video:hover {
+  transform: scale(1.015);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.45);
 }
 
-#featured-articles h2 {
-  margin-bottom: 1.25rem;
-}
+/* ---------------------- FEATURED ARTICLES ---------------------- */
 
 #featured-articles ul {
   list-style: none;
@@ -260,86 +237,70 @@ body.light-mode .intro h2 {
 #featured-articles li {
   background-color: #3d4347;
   border: 1px solid var(--card-border);
-  box-shadow: var(--shadow-soft);
   border-radius: 0.25rem;
-  padding: 0.85rem 0.9rem;
+  padding: 0.85rem;
+  box-shadow: var(--shadow-soft);
+  transition: var(--transition);
 }
 
 body.light-mode #featured-articles li {
   background-color: #f8f8f8;
-  border-color: #c4c4c4;
+  border-color: #ccc;
 }
 
-#featured-articles h3 {
-  font-size: 0.98rem;
-  margin-bottom: 0.35rem;
+#featured-articles li:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.45);
 }
 
-#featured-articles p {
-  font-size: 0.86rem;
-}
+/* ---------------------- FORM (EXACT MOCKUP) ---------------------- */
 
-/* ---------- SIGNUP / FORM BAR ---------- */
-
-#signup-form {
-  margin-bottom: 3rem;
-}
-
-#signup-form h2 {
-  margin-bottom: 0.15rem;
-}
-
-#signup-form p {
-  font-size: 0.9rem;
-  margin-bottom: 0.85rem;
-}
-
-/* big red bar like mockup */
 #signup-form form {
   background-color: var(--news-flash);
-  border: 1px solid var(--form-border);
+  border: 3px solid var(--form-border);
   border-radius: 0.25rem;
-  padding: 1.1rem 1.1rem 1.25rem;
+  padding: 1.4rem;
   box-shadow: var(--shadow-strong);
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.7rem;
+  display: block;
   color: #ffffff;
 }
 
 #signup-form label {
-  font-size: 0.85rem;
-  font-weight: 600;
+  font-size: 0.82rem;
+  font-weight: 700;
 }
 
 #signup-form input[type="text"],
 #signup-form input[type="tel"] {
   width: 100%;
-  padding: 0.4rem 0.5rem;
-  border-radius: 0.2rem;
-  border: 1px solid #d9d9d9;
-  font-size: 0.9rem;
+  background: #fff;
+  padding: 0.55rem;
+  border-radius: 3px;
+  border: 1px solid #cccccc;
+  margin-bottom: 0.9rem;
+  font-size: 0.92rem;
 }
 
 #signup-form fieldset {
+  background: rgba(0,0,0,0.06);
   border: 1px solid #ffffff;
-  border-radius: 0.2rem;
-  padding: 0.75rem;
+  border-radius: 3px;
+  padding: 1rem;
+  margin-bottom: 1.1rem;
 }
 
 #signup-form legend {
   font-size: 0.85rem;
-  font-weight: 600;
-  padding: 0 0.25rem;
+  font-weight: 700;
+  margin-bottom: 0.7rem;
 }
 
 #signup-form fieldset label {
   display: inline-flex;
   align-items: center;
-  font-weight: 400;
-  margin-right: 1.5rem;
-  margin-bottom: 0.4rem;
-  font-size: 0.85rem;
+  width: 48%;
+  margin-bottom: 0.55rem;
+  font-size: 0.88rem;
 }
 
 #signup-form fieldset input[type="checkbox"] {
@@ -347,93 +308,61 @@ body.light-mode #featured-articles li {
 }
 
 #signup-form button[type="submit"] {
-  margin-top: 0.4rem;
+  width: 100%;
   background-color: var(--blue-bulletin);
   color: #ffffff;
-  border: none;
-  border-radius: 0.15rem;
-  padding: 0.6rem;
-  font-size: 0.95rem;
+  border: 2px solid var(--blue-bulletin);
+  padding: 0.7rem;
+  border-radius: 3px;
+  font-size: 1rem;
   font-weight: 600;
-  letter-spacing: 0.04em;
+  box-shadow: var(--shadow-soft);
   cursor: pointer;
+  transition: var(--transition);
 }
 
-/* ---------- FOOTER ---------- */
+#signup-form button[type="submit"]:hover {
+  background: transparent;
+  color: var(--blue-bulletin);
+}
+
+/* ---------------------- FOOTER ---------------------- */
 
 footer {
   background-color: var(--footer-bg);
   color: #ffffff;
-  padding: 2rem 1.25rem 1.5rem;
-}
-
-footer h2 {
-  max-width: 1120px;
-  margin: 0 auto 0.75rem;
-  font-size: 1.3rem;
+  padding: 2rem 1.25rem;
 }
 
 footer ul {
-  list-style: none;
   max-width: 1120px;
   margin: 0 auto 1.5rem;
+  list-style: none;
   display: flex;
   flex-wrap: wrap;
   gap: 0.7rem;
 }
 
 footer ul li a {
-  display: inline-block;
+  background: var(--news-flash);
   padding: 0.35rem 0.8rem;
-  border-radius: 0.15rem;
-  background-color: var(--news-flash);
   color: #ffffff;
+  border-radius: 0.15rem;
   text-decoration: none;
   font-size: 0.85rem;
   font-weight: 600;
+  border: 2px solid var(--news-flash);
+  transition: var(--transition);
 }
 
-footer p {
-  max-width: 1120px;
-  margin: 0 auto;
-  font-size: 0.8rem;
-  text-align: center;
+footer ul li a:hover {
+  background: transparent;
+  color: var(--news-flash);
 }
 
-/* ---------- MEDIA QUERIES ---------- */
+/* ---------------------- DESKTOP NAV HOVER ---------------------- */
 
-/* medium 620px */
-@media (min-width: 620px) {
-  #breaking-news {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1.5rem;
-  }
-
-  #breaking-news h2 {
-    grid-column: 1 / -1;
-  }
-
-  #featured-articles ul {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  #signup-form form {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-areas:
-      "name mobile"
-      "fieldset fieldset"
-      "button button";
-  }
-
-  #signup-form label[for="name"] {
-    grid-column: 1 / 2;
-  }
-}
-
-/* large 920px */
 @media (min-width: 920px) {
-  /* desktop nav: remove hamburger, show horizontal red buttons */
   .menu-button {
     display: none;
   }
@@ -442,40 +371,43 @@ footer p {
     display: flex !important;
     background: none;
     padding: 0;
-    justify-content: flex-start;
     gap: 0.75rem;
   }
 
   .mobile-nav .menu li a {
     background: var(--news-flash);
-    border-radius: 0.2rem;
-    padding: 0.4rem 0.85rem;
-    box-shadow: var(--shadow-soft);
+    padding: 0.45rem 0.85rem;
+    border-radius: 0.25rem;
+    border: 2px solid var(--news-flash);
+    transition: var(--transition);
+  }
+
+  .mobile-nav .menu li a:hover {
+    background: transparent;
+    color: var(--news-flash);
   }
 
   #featured-articles ul {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  #breaking-news {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
   }
 }
 
-/* x-large 1024px */
-@media (min-width: 1024px) {
-  header h1 {
-    font-size: 2.4rem;
-  }
+/* ---------------------- MEDIA QUERIES ---------------------- */
 
-  h2 {
-    font-size: 1.7rem;
-  }
-
-  main {
-    padding-top: 3rem;
+@media (min-width: 620px) {
+  #featured-articles ul {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* ---------- INTERACTION QUERIES ---------- */
+/* ---------------------- INTERACTION QUERIES ---------------------- */
 
-/* prefers light */
 @media (prefers-color-scheme: light) {
   body:not(.dark-mode) {
     background-color: #f5f3e9;
@@ -483,7 +415,6 @@ footer p {
   }
 }
 
-/* prefers dark */
 @media (prefers-color-scheme: dark) {
   body:not(.light-mode) {
     background-color: #353537;
@@ -491,7 +422,6 @@ footer p {
   }
 }
 
-/* reduced motion */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation: none !important;
@@ -500,10 +430,9 @@ footer p {
   }
 }
 
-/* ---------- FEATURE QUERY :has() ---------- */
+/* ---------------------- FEATURE QUERY :has() ---------------------- */
 
 @supports (selector(:has(*))) {
-  /* when mobile menu is open, give header a subtle darker tone */
   header:has(#menu-toggle:checked) {
     background-color: #14213d;
     transition: var(--transition);
